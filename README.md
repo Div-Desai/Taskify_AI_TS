@@ -1,75 +1,94 @@
-# React + TypeScript + Vite
+# 🚀 Taskify — Scalable Kanban Task Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern task management application built with **React + TypeScript**, focused on clean architecture, predictable state management, and a Kanban-style workflow.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Overview
 
-## React Compiler
+Taskify is designed to reflect how real-world frontend applications are structured.
+It emphasizes **scalability, maintainability, and clear separation of concerns** rather than just feature implementation.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## 🧠 Features
 
-## Expanding the ESLint configuration
+* 🔐 JWT-based authentication with session persistence
+* 🛡️ Role-based access control (RBAC)
+* 📋 Kanban-style task management (create, update, delete)
+* 💬 Modular comments system
+* 🔍 Search, filters, and pagination via URL params
+* 📄 Form validation using React Hook Form + Zod
+* ⚡ Optimistic UI updates for better user experience
+* 🧩 Scalable and modular project structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🏗️ Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Category           | Tech                                              |
+| ------------------ | ------------------------------------------------- |
+| Frontend           | React 18, TypeScript, Vite                        |
+| State Management   | Redux Toolkit, React Query                        |
+| Routing            | React Router v6 (protected + nested routes)       |
+| Forms & Validation | React Hook Form, Zod                              |
+| Styling            | Tailwind CSS                                      |
+| Auth               | JWT-based (extensible to Firebase / backend APIs) |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+src/
+│
+├── features/        # Domain-based modules (tasks, auth, projects)
+├── components/      # Reusable UI components
+├── routes/          # Route configuration & guards
+├── services/        # API layer
+├── store/           # Redux store setup
+├── hooks/           # Custom hooks
+└── utils/           # Helper functions
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## ⚙️ Key Engineering Decisions
+
+* **Redux Toolkit** → predictable global state (auth, UI)
+* **React Query** → server state, caching, async handling
+* **URL-driven state** → shareable filters and pagination
+* **Optimistic updates** → improved perceived performance
+* Clear separation between **UI, business logic, and API layer**
+
+---
+
+## 🔄 Project Evolution
+
+This project was initially built in JavaScript and later rewritten in **TypeScript** to improve scalability and maintainability.
+
+### Why TypeScript?
+
+* Strong type safety reduces runtime errors
+* Better developer experience with autocomplete
+* Safer component props and API contracts
+* Easier refactoring and long-term scaling
+
+
+## 📈 Future Improvements
+
+* Backend integration (Node / Express / Next.js API routes)
+* Real-time updates (WebSockets)
+* Testing (React Testing Library / Vitest)
+* Improved mobile responsiveness
+* Dark mode support
+
+---
+
+## 🎯 What This Project Demonstrates
+
+* Real-world React architecture
+* State management at scale
+* Clean and maintainable code practices
+* Thoughtful UX decisions
+
+
+⭐ If you found this useful, consider giving it a star.
